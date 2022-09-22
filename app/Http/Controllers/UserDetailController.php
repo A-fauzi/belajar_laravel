@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserDetailController extends Controller
@@ -13,6 +14,9 @@ class UserDetailController extends Controller
      */
     public function index()
     {
+        // get user
+        $user = User::latest()->paginate(5);
+
         //
     }
 

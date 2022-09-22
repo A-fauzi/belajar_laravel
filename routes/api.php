@@ -18,4 +18,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::apiResource('/users', App\Http\Controllers\UsersDetailController::class);
+// Route::apiResource('/user', App\Http\Controllers\UserDetailController::class);
+Route::apiResource('/book-detail', App\Http\Controllers\BookingDetailController::class);
+Route::apiResource('/contact', App\Http\Controllers\ContactUserController::class);
+Route::apiResource('/destination', App\Http\Controllers\DestinationController::class);
+Route::apiResource('/destination-photos', App\Http\Controllers\DestinationPhotosController::class);
+Route::apiResource('/payment-summary', App\Http\Controllers\PaymentSummaryController::class);
+Route::apiResource('/popular-trip', App\Http\Controllers\PopularTripController::class);
+Route::apiResource('/travel-agent', App\Http\Controllers\TravelAgentController::class);
+Route::apiResource('/user-detail', App\Http\Controllers\UserDetailController::class);
