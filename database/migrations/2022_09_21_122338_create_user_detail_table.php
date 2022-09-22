@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('status_member', ['premium', 'normal'])->default('normal');
             $table->string('favourites_destination')->nullable();
             $table->bigInteger('wallet')->default(0)->unsigned();
-            $table->string('about');
+            $table->string('about')->nullable();
             $table->timestamps();
         });
     }

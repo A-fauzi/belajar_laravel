@@ -25,13 +25,11 @@ return new class extends Migration
             $table->enum('transport', ['AC bus', 'Non AC bus'])->default('AC bus');
             $table->enum('hotel', ['Double Bed', 'Deluxe Room'])->default('Double Bed');
 
-            // $table->foreignId('photos_id')->constrained('destination_photos');
-
             $table->string('map_url');
 
             $table->bigInteger('total_cost')->default(0)->unsigned();
 
-            $table->foreignId('user_joins')->constrained('user_detail');
+            $table->foreignId('user_joins')->constrained('user_detail')->nullable();
 
             $table->bigInteger('total_user_join')->nullable()->default(0);
 

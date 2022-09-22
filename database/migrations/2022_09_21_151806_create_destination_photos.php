@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('destination_photos', function (Blueprint $table) {
             $table->id();
             $table->string('image_url');
-
             $table->unsignedBigInteger('destination_id');
             $table->foreign('destination_id')->references('id')->on('destinations');
-
             $table->timestamps();
         });
     }

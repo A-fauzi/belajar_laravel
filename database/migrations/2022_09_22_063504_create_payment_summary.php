@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('payment_summary', function (Blueprint $table) {
             $table->id();
             $table->foreignId('booking_id')->constrained('booking_details');
-            $table->integer('grand_total')->unsigned();
+            $table->integer('grand_total')->unsigned()->default(0);
             $table->timestamps();
         });
     }

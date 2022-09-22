@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('booking_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('destination_id')->constrained('destinations');
-            $table->integer('pasangers');
+            $table->integer('pasangers')->default(0);
             $table->enum('payment_method', ['master_card', 'paypal'])->default('paypal');
             $table->timestamps();
         });

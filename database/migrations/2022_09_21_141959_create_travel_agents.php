@@ -15,11 +15,6 @@ return new class extends Migration
     {
         Schema::create('travel_agents', function (Blueprint $table) {
             $table->id();
-
-            // $table->foreignId('destination_id')->constrained('destinations');
-
-            // $table->foreignId('contact_id')->constrained('contact_users');
-
             $table->string('name');
             $table->string('photo_url')->nullable();
             $table->enum('status', ['verified', 'not verified']);

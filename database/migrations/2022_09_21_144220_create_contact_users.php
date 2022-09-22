@@ -17,10 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('traveler_id')->constrained('user_detail');
             $table->foreignId('travel_agent_id')->constrained('travel_agents');
-            $table->enum('type_user', ['traveller', 'travel_agent']);
             $table->string('phone_number');
             $table->string('address');
-            $table->string('social_media_url');
+            $table->string('social_media_url')->nullable();
             $table->timestamps();
         });
     }
