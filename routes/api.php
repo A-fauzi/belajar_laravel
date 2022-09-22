@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +19,16 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+// Auth
+Route::post('/auth/register', [AuthController::class, 'createUser']);
+Route::post('/auth/login', [AuthController::class, 'loginUser']);
+
 // Route::apiResource('/user', App\Http\Controllers\UserDetailController::class);
-Route::apiResource('/book-detail', App\Http\Controllers\BookingDetailController::class);
-Route::apiResource('/contact', App\Http\Controllers\ContactUserController::class);
-Route::apiResource('/destination', App\Http\Controllers\DestinationController::class);
-Route::apiResource('/destination-photos', App\Http\Controllers\DestinationPhotosController::class);
-Route::apiResource('/payment-summary', App\Http\Controllers\PaymentSummaryController::class);
-Route::apiResource('/popular-trip', App\Http\Controllers\PopularTripController::class);
-Route::apiResource('/travel-agent', App\Http\Controllers\TravelAgentController::class);
-Route::apiResource('/user-detail', App\Http\Controllers\UserDetailController::class);
+Route::apiResource('/book-detail', App\Http\Controllers\BookingDetailController::class)->middleware('auth:sanctum');
+Route::apiResource('/contact', App\Http\Controllers\ContactUserController::class)->middleware('auth:sanctum');
+Route::apiResource('/destination', App\Http\Controllers\DestinationController::class)->middleware('auth:sanctum');
+Route::apiResource('/destination-photos', App\Http\Controllers\DestinationPhotosController::class)->middleware('auth:sanctum');
+Route::apiResource('/payment-summary', App\Http\Controllers\PaymentSummaryController::class)->middleware('auth:sanctum');
+Route::apiResource('/popular-trip', App\Http\Controllers\PopularTripController::class)->middleware('auth:sanctum');
+Route::apiResource('/travel-agent', App\Http\Controllers\TravelAgentController::class)->middleware('auth:sanctum');
+Route::apiResource('/user-detail', App\Http\Controllers\UserDetailController::class)->middleware('auth:sanctum');
