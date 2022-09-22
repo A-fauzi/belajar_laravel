@@ -30,7 +30,7 @@ class UserDetailController extends Controller
     public function create()
     {
         // define validation rules
-        
+
     }
 
     /**
