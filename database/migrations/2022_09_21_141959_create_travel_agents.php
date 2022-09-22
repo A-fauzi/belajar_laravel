@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_detail', function (Blueprint $table) {
+        Schema::create('travel_agents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+
+            // $table->foreignId('destination_id')->constrained('destinations');
+
+            // $table->foreignId('contact_id')->constrained('contact_users');
+
+            $table->string('name');
             $table->string('photo_url')->nullable();
-            $table->enum('status_member', ['premium', 'normal'])->default('normal');
-            $table->string('favourites_destination')->nullable();
-            $table->bigInteger('wallet')->default(0)->unsigned();
-            $table->string('about');
+            $table->enum('status', ['verified', 'not verified']);
+            $table->string('rating')->nullable();
+            $table->string('about')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_detail');
+        Schema::dropIfExists('travel_agents');
     }
 };
