@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('contact_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('traveler_id')->constrained('user_detail');
+            $table->foreignId('traveler_id')->constrained('user_details');
             $table->foreignId('travel_agent_id')->constrained('travel_agents');
             $table->string('phone_number');
             $table->string('address');

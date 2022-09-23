@@ -29,7 +29,7 @@ return new class extends Migration
 
             $table->bigInteger('total_cost')->default(0)->unsigned();
 
-            $table->foreignId('user_joins')->constrained('user_detail')->nullable();
+            $table->foreignId('user_joins')->constrained('user_details')->nullable();
 
             $table->bigInteger('total_user_join')->nullable()->default(0);
 
